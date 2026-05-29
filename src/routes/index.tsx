@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import {
   Bar, BarChart, CartesianGrid, Cell, Legend, Line, LineChart, Pie, PieChart,
@@ -53,9 +54,17 @@ function Dashboard() {
       <header className="relative overflow-hidden border-b border-border">
         <div className="absolute inset-0 pointer-events-none" style={{ background: "var(--gradient-glow)" }} />
         <div className="relative mx-auto max-w-7xl px-6 py-12">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-primary">
-            <span className="inline-block h-2 w-2 rounded-full bg-primary animate-pulse" />
-            Pulse / Analyst Console
+          <div className="flex items-center justify-between gap-4 flex-wrap">
+            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-primary">
+              <span className="inline-block h-2 w-2 rounded-full bg-primary animate-pulse" />
+              Pulse / Analyst Console
+            </div>
+            <Link
+              to="/ml"
+              className="rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-xs font-mono uppercase tracking-wider text-primary transition hover:bg-primary/20"
+            >
+              ML Studio →
+            </Link>
           </div>
           <h1 className="mt-4 text-4xl md:text-6xl font-semibold tracking-tight">
             From raw CSV<br />
